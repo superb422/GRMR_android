@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#92b6d5</color>
+    <color name="colorPrimaryDark">#92b6d5</color>
+    <color name="colorAccent">#92b6d5</color>
+    <color name="colorHint">#9b9b9b</color>
+    <color name="colorActivated">#92b6d5</color>
+    <color name="colorUnderline">#92b6d5</color>
+    <color name="colorDraw">#242b33</color>
+    <color name="colorText">#92b6d5</color>
+    <color name="colorWhite">#ffffff</color>
+
+</resources>
