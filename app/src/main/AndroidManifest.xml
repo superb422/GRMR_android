@@ -31,15 +31,16 @@
         </activity>
 
         <provider
-            android:authorities="com.example.syl.grmr.provider"
             android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.syl.grmr.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
+        <activity android:name=".Main.MainActivity" />
         <activity android:name=".Login.Login2Activity" />
         <activity android:name=".Login.RegisterActivity" />
         <activity android:name=".addTravel.addTravelActivity" />
@@ -52,7 +53,7 @@
         <activity
             android:name=".Setup.Profile"
             android:label="@string/title_activity_profile"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

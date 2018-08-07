@@ -1,12 +1,17 @@
 package com.example.syl.grmr.Login;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.syl.grmr.Constructor.GM_Users;
@@ -31,6 +36,11 @@ public class Login2Activity extends AppCompatActivity {
     private String email = null;
     private String password = null;
 
+    FrameLayout frameLayout;
+    Fragment fragment1,fragment2,fragment3,fragment4;
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +57,16 @@ public class Login2Activity extends AppCompatActivity {
                 .build();
         final ServerService service = retrofit.create(ServerService.class);
 
+        fragment1 = new pw_find1();
+        fragment2 = new pw_find2();
+        fragment3 = new pw_find3();
+        fragment4 = new pw_find4();
 
+        onFragmentChange(0);
+/*
         final EditText emailText = (EditText) findViewById(R.id.emailText);
         final EditText passwordText = (EditText) findViewById(R.id.passwordText);
+
 
         Button loginButton = (Button) findViewById(R.id.loginbutton);
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +75,12 @@ public class Login2Activity extends AppCompatActivity {
 
                 email = emailText.getText().toString();
                 password = passwordText.getText().toString();
-/*
+
+                Intent mainIntent = new Intent(Login2Activity.this, MainActivity.class);
+                mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Login2Activity.this.startActivity(mainIntent);
+
                 final Call<List<GM_Users>> gmUsersCall = service.userList(email, password);
                 gmUsersCall.enqueue(new Callback<List<GM_Users>>() {
                     @Override
@@ -93,7 +115,7 @@ public class Login2Activity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "서버와 통신중 에러가 발생했습니다", Toast.LENGTH_SHORT).show();
                     }
                 });
-*/
+
                 final Call<GM_Users> gmUsersCall = service.userList("email", "password");
                 gmUsersCall.enqueue(new Callback<GM_Users>() {
                     @Override
@@ -127,7 +149,6 @@ public class Login2Activity extends AppCompatActivity {
                     }
                 });
 
-
              /*
                 Intent mainIntent = new Intent(Login2Activity.this, MainActivity.class);
                 //Intent mainIntent = new Intent(Login2Activity.this, MainActivity2.class);
@@ -135,8 +156,21 @@ public class Login2Activity extends AppCompatActivity {
                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 Login2Activity.this.startActivity(mainIntent);
                 //Login2Activity.this.startActivity(mainIntent);
-            */
+
             }
-        });
+        });*/
     }
+
+    public void onFragmentChange(int index){
+        if(index ==0){
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,fragment1).commit();
+        }else if(index ==1){
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,fragment2).commit();
+        }else if(index==2){
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,fragment3).commit();
+        }else{
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,fragment4).commit();
+        }
+    }
+
 }

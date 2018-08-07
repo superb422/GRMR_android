@@ -8,10 +8,12 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,12 +56,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-
 public class LoginActivity extends AppCompatActivity {
     static Context mContext;
     private CallbackManager faceCallbackManager;
     SessionCallback kakaoCallback;
     private int check = 0;
+
 
     public static String getKeyHash(final Context context) {
         PackageInfo packageInfo = Utility.getPackageInfo(context, PackageManager.GET_SIGNATURES);
@@ -121,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         /****************************Register Button************************************/
-        TextView registerButton = (TextView) findViewById(R.id.registerButton);
+        LinearLayout registerButton = (LinearLayout) findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

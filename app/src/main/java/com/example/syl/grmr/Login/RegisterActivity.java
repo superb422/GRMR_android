@@ -8,10 +8,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.syl.grmr.Constructor.UserInformation;
 import com.example.syl.grmr.R;
+import com.example.syl.grmr.Setup.Profile;
 import com.example.syl.grmr.service.ServerService;
 
 import java.util.concurrent.TimeUnit;
@@ -30,6 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String email;
     private String password;
     private String nickname;
+    Button register,fr_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +51,29 @@ public class RegisterActivity extends AppCompatActivity {
         final ServerService service = retrofit.create(ServerService.class);
 
         //view
-        final EditText emailText = (EditText) findViewById(R.id.emailText);
-        final EditText passwordText = (EditText) findViewById(R.id.passwordText);
-        final EditText nicknameText = (EditText) findViewById(R.id.nameText);
+        final TextView emailText = (TextView) findViewById(R.id.emailText);
+        final TextView passwordText = (TextView) findViewById(R.id.passwordText);
+        final TextView nicknameText = (TextView) findViewById(R.id.OkText);
 
+        register=(Button)findViewById(R.id.registerbutton2);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registerIntent=new Intent(RegisterActivity.this, Profile.class);
+                startActivity(registerIntent);
+            }
+        });
 
+        fr_back=(Button)findViewById(R.id.fr_back5);
+        fr_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backIntent=new Intent(RegisterActivity.this,Login2Activity.class);
+                startActivity(backIntent);
+            }
+        });
         //buttonListener
-        Button registerButton = (Button) findViewById(R.id.registerButton);
+        /*Button registerButton = (Button) findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +113,6 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 });
             }
-        });
+        });*/
     }
 }

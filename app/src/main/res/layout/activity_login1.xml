@@ -1,48 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/emailLoginButton"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="20dp"
-        android:background="#92b6d5  "
-        android:text="이메일로 로그인"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/emailloginbutton"
+        android:text="로그인하러 갈래?"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/nvLoginButton"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:background="#01cf37"
-        android:text="네이버로 로그인"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="@+id/kkLoginButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/kkLoginButton"
-        app:layout_constraintTop_toBottomOf="@+id/kkLoginButton" />
 
     <Button
         android:id="@+id/kkLoginButton"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:background="#fbe201"
-        android:text="카카오톡으로 로그인"
-        android:textColor="#ffffff"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/kakaologinbutton"
+        android:text="카카오톡으로 갈래?"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="@+id/fbLoginButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/fbLoginButton"
@@ -52,42 +37,64 @@
         android:id="@+id/fbLoginButton"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:background="#3b579d"
-        android:text="페이스북으로 로그인"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/facebookloginbutton"
+        android:text="페이스북으로 갈래?"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="@+id/emailLoginButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/emailLoginButton"
         app:layout_constraintTop_toBottomOf="@+id/emailLoginButton" />
 
-    <TextView
+    <LinearLayout
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginTop="32dp"
-        android:text="회원가입 이메일 등록"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/nvLoginButton"
-        app:layout_constraintStart_toStartOf="@+id/nvLoginButton"
-        app:layout_constraintTop_toBottomOf="@+id/nvLoginButton" />
+        app:layout_constraintEnd_toEndOf="@+id/kkLoginButton"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingRight="5dp"
+            android:text="아이디가 없으면" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/underline"
+            android:text="여기"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/nvLoginButton"
+            app:layout_constraintStart_toStartOf="@+id/nvLoginButton"
+            app:layout_constraintTop_toBottomOf="@+id/nvLoginButton" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:text="를 눌러!" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="270dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
-
-
-
-
 
 
 </android.support.constraint.ConstraintLayout>
