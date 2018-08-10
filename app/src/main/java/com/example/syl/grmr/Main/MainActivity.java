@@ -3,12 +3,20 @@ package com.example.syl.grmr.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.syl.grmr.MainFragments.HomeFragment;
 import com.example.syl.grmr.MainFragments.MatchingFragment;
@@ -17,10 +25,10 @@ import com.example.syl.grmr.MainFragments.ThemeFragment;
 import com.example.syl.grmr.MainFragments.TravelFragment;
 import com.example.syl.grmr.R;
 import com.example.syl.grmr.Setup.Profile;
+import com.example.syl.grmr.addTravel.SearchFriendActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    LinearLayout SettingButton;
 
     private final int FragmentHome = 1;
     private final int FragmentAddTravel = 2;
@@ -29,14 +37,66 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final int FragmentSetting = 5;
 
 
-    ImageButton homeTab, travelTab, matchingTab, themeTab, settingTab;
-    TextView homeText, travelText, matchingText, themeText, settingText;
+    ImageButton homeTab, travelTab, matchingTab, themeTab;
+    TextView homeText, travelText, matchingText, themeText;
+    private DrawerLayout mDrawerLayout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.various_fragment);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                menuItem.setChecked(true);
+                mDrawerLayout.closeDrawers();
+
+                int id = menuItem.getItemId();
+                switch (id) {
+                    case R.id.navigation_item_profile:
+                        Intent profileIntent = new Intent(MainActivity.this,Profile.class);
+                        profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(profileIntent);
+                        break;
+
+                    case R.id.navigation_item_friend:
+                        Intent friendIntent = new Intent(MainActivity.this,SearchFriendActivity.class);
+                        friendIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(friendIntent);
+                        break;
+
+                    case R.id.navigation_item_alarm:
+
+                        break;
+
+                    case R.id.navigation_item_store:
+
+                        break;
+
+                    case R.id.navigation_item_setting:
+
+                        break;
+                    case R.id.navigation_item_qna:
+
+                        break;
+
+                }
+
+                return true;
+            }
+        });
 
         homeTab = (ImageButton) findViewById(R.id.homeButton);
         homeText = (TextView) findViewById(R.id.homeText);
@@ -50,8 +110,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         themeTab = (ImageButton) findViewById(R.id.themeButton);
         themeText = (TextView) findViewById(R.id.themeText);
 
-        settingTab = (ImageButton) findViewById(R.id.settingButton);
-        settingText = (TextView) findViewById(R.id.settingText);
 
         homeTab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,24 +119,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        /*****************setup button*********************/
-
-        SettingButton = (LinearLayout) findViewById(R.id.SettingLayout);
-        SettingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, Profile.class);
-                startActivity(it);
-            }
-        });
-
 
         // 탭 버튼에 대한 리스너 연결
         homeTab.setOnClickListener(this);
         travelTab.setOnClickListener(this);
         matchingTab.setOnClickListener(this);
         themeTab.setOnClickListener(this);
-        settingTab.setOnClickListener(this);
 
         // 임의로 액티비티 호출 시점에 어느 프레그먼트를 프레임레이아웃에 띄울 것인지를 정함
 
@@ -96,9 +142,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             themeTab.setImageResource(R.drawable.ic_theme_off);
             themeText.setTextColor(getResources().getColor(R.color.colorHint));
-
-            settingTab.setImageResource(R.drawable.ic_setting_off);
-            settingText.setTextColor(getResources().getColor(R.color.colorHint));
 
             callFragment(FragmentAddTravel);
         } else //HomeFragment 띄움
@@ -124,9 +167,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 themeTab.setImageResource(R.drawable.ic_theme_off);
                 themeText.setTextColor(getResources().getColor(R.color.colorHint));
 
-                settingTab.setImageResource(R.drawable.ic_setting_off);
-                settingText.setTextColor(getResources().getColor(R.color.colorHint));
-
                 callFragment(FragmentHome);
                 break;
 
@@ -143,9 +183,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 themeTab.setImageResource(R.drawable.ic_theme_off);
                 themeText.setTextColor(getResources().getColor(R.color.colorHint));
-
-                settingTab.setImageResource(R.drawable.ic_setting_off);
-                settingText.setTextColor(getResources().getColor(R.color.colorHint));
 
                 callFragment(FragmentAddTravel);
                 break;
@@ -164,8 +201,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 themeTab.setImageResource(R.drawable.ic_theme_off);
                 themeText.setTextColor(getResources().getColor(R.color.colorHint));
 
-                settingTab.setImageResource(R.drawable.ic_setting_off);
-                settingText.setTextColor(getResources().getColor(R.color.colorHint));
 
                 callFragment(FragmentMatching);
                 break;
@@ -184,30 +219,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 themeTab.setImageResource(R.drawable.ic_theme_on);
                 themeText.setTextColor(getResources().getColor(R.color.colorPrimary));
 
-                settingTab.setImageResource(R.drawable.ic_setting_off);
-                settingText.setTextColor(getResources().getColor(R.color.colorHint));
-
                 callFragment(FragmentTheme);
-                break;
-
-            case R.id.settingButton:
-                // 'settingButton' 클릭 시 'SettingFragment' 호출
-                homeTab.setImageResource(R.drawable.ic_travel_off);
-                homeText.setTextColor(getResources().getColor(R.color.colorHint));
-
-                travelTab.setImageResource(R.drawable.ic_travel_off);
-                travelText.setTextColor(getResources().getColor(R.color.colorHint));
-
-                matchingTab.setImageResource(R.drawable.ic_matching_off);
-                matchingText.setTextColor(getResources().getColor(R.color.colorHint));
-
-                themeTab.setImageResource(R.drawable.ic_theme_off);
-                themeText.setTextColor(getResources().getColor(R.color.colorHint));
-
-                settingTab.setImageResource(R.drawable.ic_setting_on);
-                settingText.setTextColor(getResources().getColor(R.color.colorPrimary));
-
-                callFragment(FragmentSetting);
                 break;
         }
     }
@@ -254,6 +266,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        switch (id) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
 
