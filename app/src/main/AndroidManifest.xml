@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".Login.GlobalApplication"
@@ -55,7 +56,13 @@
         <activity android:name=".Setup.CharActivity" />
         <activity android:name=".Setup.InterestActivity" />
         <activity android:name=".Setup.PrActivity" />
-        <activity android:name=".NavigationMenu.addFriend"></activity>
+        <activity android:name=".NavigationMenu.FriendMenu" />
+        <activity android:name=".NavigationMenu.FriendProfile" />
+        <activity android:name=".NavigationMenu.addFriend" />
+        <activity android:name=".NavigationMenu.Alarmsetting" />
+        <activity android:name=".NavigationMenu.accountsetting" />
+        <activity android:name=".Main.Alarm" />
+        <activity android:name=".NavigationMenu.Report"></activity>
     </application>
 
 </manifest>

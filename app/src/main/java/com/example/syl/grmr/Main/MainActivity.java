@@ -10,22 +10,23 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.syl.grmr.MainFragments.HomeFragment;
 import com.example.syl.grmr.MainFragments.MatchingFragment;
 import com.example.syl.grmr.MainFragments.SettingFragment;
+import com.example.syl.grmr.MainFragments.StoreFragment;
 import com.example.syl.grmr.MainFragments.ThemeFragment;
 import com.example.syl.grmr.MainFragments.TravelFragment;
+import com.example.syl.grmr.NavigationMenu.Alarmsetting;
+import com.example.syl.grmr.NavigationMenu.FriendMenu;
+import com.example.syl.grmr.NavigationMenu.accountsetting;
 import com.example.syl.grmr.R;
 import com.example.syl.grmr.Setup.Profile;
-import com.example.syl.grmr.addTravel.SearchFriendActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -34,12 +35,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final int FragmentAddTravel = 2;
     private final int FragmentMatching = 3;
     private final int FragmentTheme = 4;
-    private final int FragmentSetting = 5;
-
+    private final int FragmentStore = 5;
 
     ImageButton homeTab, travelTab, matchingTab, themeTab;
     TextView homeText, travelText, matchingText, themeText;
     private DrawerLayout mDrawerLayout;
+    LinearLayout storelayout;
 
 
     @Override
@@ -56,6 +57,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        /* 열쇠 클릭 */
+        storelayout = (LinearLayout)findViewById(R.id.keystore);
+        storelayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callFragment(FragmentStore);
+            }
+        });
+
+        /* 네비게이션 */
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -72,13 +83,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case R.id.navigation_item_friend:
-                        Intent friendIntent = new Intent(MainActivity.this,SearchFriendActivity.class);
+                        Intent friendIntent = new Intent(MainActivity.this,FriendMenu.class);
                         friendIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(friendIntent);
                         break;
 
                     case R.id.navigation_item_alarm:
-
+                        Intent alarmIntent = new Intent(MainActivity.this,Alarmsetting.class);
+                        alarmIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(alarmIntent);
                         break;
 
                     case R.id.navigation_item_store:
@@ -86,7 +99,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case R.id.navigation_item_setting:
-
+                        Intent accountIntent = new Intent(MainActivity.this,accountsetting.class);
+                        accountIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(accountIntent);
                         break;
                     case R.id.navigation_item_qna:
 
@@ -98,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        /* 하단 탭 */
         homeTab = (ImageButton) findViewById(R.id.homeButton);
         homeText = (TextView) findViewById(R.id.homeText);
 
@@ -260,10 +276,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case 5:
                 // 'MatchingFragment' 호출
-                SettingFragment fragmentSetting = new SettingFragment();
-                transaction.replace(R.id.child_fragment_container, fragmentSetting);
+                StoreFragment fragmentStore = new StoreFragment();
+                transaction.replace(R.id.child2_fragment_container, fragmentStore);
                 transaction.commit();
                 break;
+
         }
 
     }

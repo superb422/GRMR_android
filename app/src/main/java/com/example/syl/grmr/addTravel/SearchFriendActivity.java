@@ -33,10 +33,10 @@ public class SearchFriendActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_friends);
+        setContentView(R.layout.activity_add_friend);
 
         editSearch = (EditText) findViewById(R.id.friend_editText);
-        listView = (ListView) findViewById(R.id.friend_listview);
+        //listView = (ListView) findViewById(R.id.friend_listview);
 
         // 리스트를 생성한다.
         list = new ArrayList<String>();

@@ -9,5 +9,8 @@
     <color name="colorDraw">#242b33</color>
     <color name="colorText">#92b6d5</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="bg_row_background">#fa315b</color>
+    <color name="item_name">#535353</color>
+    <color name="description">#a9a9a9</color>
 
 </resources>

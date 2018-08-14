@@ -88,7 +88,7 @@ public class FriendListviewAdapter extends BaseAdapter {
         // 리스트에 있는 데이터와 입력단어가 일치하는 부분의 색깔을 변경한다.
         String coloredText = list.get(position);
         builder = new SpannableStringBuilder(coloredText);
-        builder.setSpan(new ForegroundColorSpan(Color.parseColor("#f16461")), 0, searchText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //builder.setSpan(new ForegroundColorSpan(Color.parseColor("#f16461")), 0, searchText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         //리스트를 뿌린다.
         viewHolder.label.setText(builder);
