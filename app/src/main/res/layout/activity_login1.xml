@@ -1,100 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
-    <Button
-        android:id="@+id/emailLoginButton"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="84dp"
-        android:background="@drawable/emailloginbutton"
-        android:text="로그인하러 갈래?"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <Button
-        android:id="@+id/kkLoginButton"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="13dp"
-        android:background="@drawable/kakaologinbutton"
-        android:text="카카오톡으로 갈래?"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toEndOf="@+id/fbLoginButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/fbLoginButton"
-        app:layout_constraintTop_toBottomOf="@+id/fbLoginButton" />
+    <ImageView
+        android:id="@+id/main_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="196dp"
+        app:srcCompat="@drawable/ic_main" />
 
-    <Button
-        android:id="@+id/fbLoginButton"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="13dp"
-        android:background="@drawable/facebookloginbutton"
-        android:text="페이스북으로 갈래?"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="@+id/emailLoginButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/emailLoginButton"
-        app:layout_constraintTop_toBottomOf="@+id/emailLoginButton" />
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="18dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="329dp"
+        app:srcCompat="@drawable/ic_comma" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="18dp"
+        android:layout_alignBottom="@+id/main_icon"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginRight="90dp"
+        app:srcCompat="@drawable/ic_dot" />
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="104dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginRight="67dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/fbLoginButton"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                app:srcCompat="@drawable/facebook_icon" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="페이스북"
+                android:textColor="#4a4a4a" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/kkLoginButton"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                app:srcCompat="@drawable/ic_oval" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="네이버"
+                android:textColor="#4a4a4a" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/emailLoginButton"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                app:srcCompat="@drawable/ic_grmr" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="갈래말래"
+                android:textColor="#4a4a4a" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="60dp"
+        android:text="아직 회원이 아니신가요?"
+        android:textColor="#575757"
+        app:fontFamily="serif" />
+
+    <TextView
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/kkLoginButton"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView19"
+        android:layout_marginRight="60dp"
+        android:text="@string/membership"
+        android:textColor="#517ae4" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingRight="5dp"
-            android:text="아이디가 없으면" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/underline"
-            android:text="여기"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/nvLoginButton"
-            app:layout_constraintStart_toStartOf="@+id/nvLoginButton"
-            app:layout_constraintTop_toBottomOf="@+id/nvLoginButton" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="5dp"
-            android:text="를 눌러!" />
-    </LinearLayout>
+    <View
+        android:id="@+id/view7"
+        android:layout_width="79dp"
+        android:layout_height="1dp"
+        android:layout_alignStart="@+id/registerButton"
+        android:layout_below="@+id/textView19"
+        android:layout_marginTop="-58dp"
+        android:background="#517ae4" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="270dp"
-        app:layout_constraintBottom_toTopOf="@+id/registerButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
+        android:layout_width="23dp"
+        android:layout_height="21.1dp"
+        android:layout_alignParentBottom="true"
 
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="147dp"
+        android:gravity="center"
+        app:srcCompat="@drawable/ic_kakao" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

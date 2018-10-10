@@ -41,28 +41,20 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".Main.MainActivity" />
-        <activity android:name=".Login.Login2Activity" />
-        <activity android:name=".Login.RegisterActivity" />
-        <activity android:name=".addTravel.addTravelActivity" />
-        <activity android:name=".addTravel.addTravel2Activity" />
-        <activity android:name=".addTravel.addTravel2_1Activity" />
-        <activity android:name=".addTravel.addTravel3Activity" />
-        <activity android:name=".addTravel.addTravel4Activity" />
-        <activity android:name=".addTravel.SearchCityActivity" />
-        <activity android:name=".addTravel.SearchFriendActivity" />
-        <activity android:name=".Setup.Profile" />
-        <activity android:name=".Setup.StyleActivity" />
-        <activity android:name=".Setup.CharActivity" />
-        <activity android:name=".Setup.InterestActivity" />
-        <activity android:name=".Setup.PrActivity" />
-        <activity android:name=".NavigationMenu.FriendMenu" />
-        <activity android:name=".NavigationMenu.FriendProfile" />
-        <activity android:name=".NavigationMenu.addFriend" />
-        <activity android:name=".NavigationMenu.Alarmsetting" />
-        <activity android:name=".NavigationMenu.accountsetting" />
-        <activity android:name=".Main.Alarm" />
-        <activity android:name=".NavigationMenu.Report"></activity>
+        <activity android:name=".Profile_Register.register_step1" />
+        <activity android:name=".Profile_Register.register_step2" />
+        <activity android:name=".Profile_Register.register_step4" />
+        <activity
+            android:name=".Login.EmailregisterActivity"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Profile_Register.register_step3" />
+        <activity android:name=".Main.MainActivity"></activity>
     </application>
 
 </manifest>

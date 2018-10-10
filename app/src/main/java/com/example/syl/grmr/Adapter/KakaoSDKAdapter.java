@@ -40,7 +40,7 @@ public class KakaoSDKAdapter extends KakaoAdapter {
             }
 
             // 로그인 웹뷰에서 pause와 resume시에 타이머를 설정하여, CPU의 소모를 절약 할 지의 여부를 지정합니다.
-            // true로 지정할 경우, 로그인 웹뷰의 onPuase()와 onResume()에 타이머를 설정해야 합니다.
+            // true로 지정할 경우, 로그인 웹뷰의 onPause()와 onResume()에 타이머를 설정해야 합니다.
 
             @Override
             public boolean isUsingWebviewTimer() {

@@ -4,10 +4,10 @@
     <color name="colorPrimaryDark">#92b6d5</color>
     <color name="colorAccent">#92b6d5</color>
     <color name="colorHint">#9b9b9b</color>
-    <color name="colorActivated">#92b6d5</color>
+    <color name="colorActivated">#dcdcdc</color>
     <color name="colorUnderline">#92b6d5</color>
-    <color name="colorDraw">#242b33</color>
-    <color name="colorText">#92b6d5</color>
+    <color name="colorDraw">#517ae4</color>
+    <color name="colorText">#474747</color>
     <color name="colorWhite">#ffffff</color>
     <color name="bg_row_background">#fa315b</color>
     <color name="item_name">#535353</color>

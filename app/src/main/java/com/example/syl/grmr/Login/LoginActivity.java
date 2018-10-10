@@ -13,12 +13,14 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.syl.grmr.Constructor.Contributor;
 import com.example.syl.grmr.Main.MainActivity;
+import com.example.syl.grmr.Profile_Register.register_step1;
 import com.example.syl.grmr.R;
 import com.example.syl.grmr.service.ServerService;
 import com.facebook.CallbackManager;
@@ -61,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
     private CallbackManager faceCallbackManager;
     SessionCallback kakaoCallback;
     private int check = 0;
+    ImageView facebookLoginButton, kakaoLoginButton, emailLoginButton;
+    TextView registerButton;
 
 
     public static String getKeyHash(final Context context) {
@@ -86,21 +90,21 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login1);
 
         mContext = getApplicationContext();
-        kakaoCallback = new SessionCallback();
+        kakaoCallback = new SessionCallback(); // 콜백 선언
         Session.getCurrentSession().addCallback(kakaoCallback);
 
-        /********************************email Login*************************************/
-        Button emailLoginButton = (Button) findViewById(R.id.emailLoginButton);
+        /********************************갈래말래(email) Login*************************************/
+        emailLoginButton = (ImageView) findViewById(R.id.emailLoginButton);
         emailLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent login2Intent = new Intent(LoginActivity.this, Login2Activity.class);
+                Intent login2Intent = new Intent(LoginActivity.this, register_step1.class);
                 LoginActivity.this.startActivity(login2Intent);
             }
         });
 
         /****************************FaceBook Login***********************************/
-        Button facebookLoginButton = (Button) findViewById(R.id.fbLoginButton);
+        facebookLoginButton = (ImageView) findViewById(R.id.fbLoginButton);
         facebookLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
 
         /******************************Kakaotalk Login*********************************/
 
-        Button kakaoLoginButton = (Button) findViewById(R.id.kkLoginButton);
+        kakaoLoginButton = (ImageView) findViewById(R.id.kkLoginButton);
         kakaoLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,11 +127,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
         /****************************Register Button************************************/
-        LinearLayout registerButton = (LinearLayout) findViewById(R.id.registerButton);
+        registerButton = (TextView) findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                Intent registerIntent = new Intent(LoginActivity.this, EmailregisterActivity.class);
                 LoginActivity.this.startActivity(registerIntent);
             }
         });
@@ -142,7 +146,7 @@ public class LoginActivity extends AppCompatActivity {
                 .readTimeout(10,TimeUnit.MINUTES)
                 .build();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://52.197.13.138")
+                .baseUrl("http://52.197.13.138") // 뒤에 / 붙여야하나??
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ServerService service = retrofit.create(ServerService.class);

@@ -14,7 +14,7 @@
     </style>
 
     <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
-        <item name="colorControlNormal">@color/colorUnderline</item>
+        <item name="colorControlNormal">#dcdcdc</item>
         <item name="colorControlActivated">@color/colorActivated</item>
         <item name="android:textCursorDrawable">@color/colorDraw</item>
         <item name="android:textColor">@color/colorText</item>
@@ -24,4 +24,9 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.NoBackground" parent="android:Theme">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
 </resources>

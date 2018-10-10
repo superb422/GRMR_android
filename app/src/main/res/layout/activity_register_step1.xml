@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.syl.grmr.Profile_Register.register_step1">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="#4e80d4" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="192dp"
+        android:gravity="left|center"
+        android:text="당신을 대표할\n닉네임을 입력해주세요."
+        android:textColor="#474747"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/step1_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#e2e2e2"
+        android:text="다음"
+        android:textColor="#585858"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/step1_nickname"
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableRight="@drawable/ic_nextarrow"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:ems="10"
+        android:hint="닉네임 입력"
+        android:inputType="textPersonName"
+        android:textColorHint="#d6d6d6"
+        android:textSize="16dp"
+        android:theme="@style/EditTextStyle" />
+
+    <TextView
+        android:id="@+id/check_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="244dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="14dp" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        app:srcCompat="@drawable/ic_exitbtn" />
+
+
+</RelativeLayout>
