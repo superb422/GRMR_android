@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class register_step1 extends AppCompatActivity {
     Button step1;
     EditText nickname;
     TextView checktext;
+    ImageView exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,16 @@ public class register_step1 extends AppCompatActivity {
                 Intent step1intent = new Intent(register_step1.this,register_step2.class);
                 step1intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(step1intent);
-                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);  // 오른쪽 화면이 들어오면서 왼쪽화면 아웃
                 finish();
+            }
+        });
+
+        exit = (ImageView)findViewById(R.id.step_exit);
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
 

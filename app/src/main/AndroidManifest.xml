@@ -54,7 +54,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Profile_Register.register_step3" />
-        <activity android:name=".Main.MainActivity"></activity>
+        <activity android:name=".Profile_Register.register_step5" />
+        <activity android:name=".Profile_Register.register_step6" />
+        <activity android:name=".Main.MainActivity" />
     </application>
 
 </manifest>

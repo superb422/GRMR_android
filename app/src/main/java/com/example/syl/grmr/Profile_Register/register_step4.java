@@ -19,6 +19,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -33,7 +34,7 @@ import java.util.List;
 
 public class register_step4 extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView picture1,picture2,picture3,picture4;
+    private ImageView picture1,picture2,picture3,picture4,back;
 
     private static final int PICK_FROM_CAMERA = 1;
     private static final int PICK_FROM_ALBUM = 2;
@@ -50,6 +51,7 @@ public class register_step4 extends AppCompatActivity implements View.OnClickLis
     String items[] = { "사진 찍기", "앨범에서 가져오기" };
     int picture_index=1;
 
+    Button step4btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +61,29 @@ public class register_step4 extends AppCompatActivity implements View.OnClickLis
         checkPermissions();
         initView();
 
+        step4btn = (Button)findViewById(R.id.step4_btn);
+        step4btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent step4intent = new Intent(register_step4.this,register_step5.class);
+                //step4intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(step4intent);
+                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                finish();
+            }
+        });
+
+        back=(ImageView)findViewById(R.id.step4_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent step4back = new Intent(register_step4.this,register_step3.class);
+                step4back.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(step4back);
+                overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
+                finish();
+            }
+        });
 
     }
 
@@ -351,5 +376,13 @@ public class register_step4 extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent step4back = new Intent(register_step4.this,register_step3.class);
+        step4back.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(step4back);
+        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
+        finish();
+        super.onBackPressed();
+    }
 }
