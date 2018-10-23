@@ -23,8 +23,14 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/testtest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="다음" />
+        android:text="여행등록" />
+
+    <Button
+        android:id="@+id/testtest2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="여행등록없을시" />
 </LinearLayout>

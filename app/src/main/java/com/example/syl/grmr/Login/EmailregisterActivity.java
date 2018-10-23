@@ -1,10 +1,12 @@
 package com.example.syl.grmr.Login;
 
 import android.app.Service;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -14,10 +16,12 @@ import android.widget.Toast;
 
 import com.example.syl.grmr.R;
 
+import static java.lang.Thread.sleep;
+
 public class EmailregisterActivity extends AppCompatActivity {
 
-    EditText emailtext,pwtext;
-    ImageView mainicon,maincomma,maindot;
+    ExtensionEditText emailtext,pwtext;
+    ImageView mainicon,emailback;
     RelativeLayout registerlayout;
     SoftKeyboard softKeyboard;
 
@@ -26,25 +30,36 @@ public class EmailregisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_email);
 
-        emailtext=(EditText)findViewById(R.id.email_id);
-        pwtext=(EditText)findViewById(R.id.password_id);
+        emailtext=(ExtensionEditText)findViewById(R.id.email_id);
+        emailtext.requestFocus();
+        emailtext.setHiddenKeyboardOnBackPressed(false); // 뒤로가기 버튼 비활성화
+        pwtext=(ExtensionEditText)findViewById(R.id.password_id);
+        pwtext.setHiddenKeyboardOnBackPressed(false);
+
+
+        emailback = (ImageView)findViewById(R.id.email_back);
+        emailback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backbtn = new Intent(EmailregisterActivity.this,LoginActivity.class);
+                backbtn.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(backbtn);
+                finish();
+            }
+        });
         mainicon=(ImageView)findViewById(R.id.main_icon);
-        maincomma=(ImageView)findViewById(R.id.main_icon_comma);
-        maindot=(ImageView)findViewById(R.id.main_icon_dot);
         registerlayout=(RelativeLayout)findViewById(R.id.register_layout);
 
         InputMethodManager controlManager = (InputMethodManager)getSystemService(Service.INPUT_METHOD_SERVICE);
-        softKeyboard = new SoftKeyboard(registerlayout, controlManager);
+
+        /*softKeyboard = new SoftKeyboard(registerlayout, controlManager);
         softKeyboard.setSoftKeyboardCallback(new SoftKeyboard.SoftKeyboardChanged() {
             @Override
             public void onSoftKeyboardHide() {
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
-                        mainicon.setVisibility(View.VISIBLE);
-                        maincomma.setVisibility(View.VISIBLE);
-                        maindot.setVisibility(View.VISIBLE);
-
+                       // mainicon.setVisibility(View.VISIBLE);
                     }
                 });
             }
@@ -54,18 +69,10 @@ public class EmailregisterActivity extends AppCompatActivity {
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
-                        mainicon.setVisibility(View.GONE);
-                        maincomma.setVisibility(View.GONE);
-                        maindot.setVisibility(View.GONE);
+                        //mainicon.setVisibility(View.INVISIBLE);
                     }
                 });
             }
-        });
-    }
-    @Override
-    public void onDestroy()
-    {
-        super.onDestroy();
-        softKeyboard.unRegisterSoftKeyboardCallback();
+        });*/
     }
 }

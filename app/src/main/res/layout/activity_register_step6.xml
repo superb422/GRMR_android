@@ -297,9 +297,11 @@
                     android:layout_marginLeft="197dp"
                     app:srcCompat="@drawable/ic_radiobutton" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <TextView

@@ -15,24 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="196dp"
-        app:srcCompat="@drawable/ic_main" />
-
-    <ImageView
-        android:layout_width="10dp"
-        android:layout_height="18dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="329dp"
-        app:srcCompat="@drawable/ic_comma" />
-
-    <ImageView
-        android:layout_width="10dp"
-        android:layout_height="18dp"
-        android:layout_alignBottom="@+id/main_icon"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="13dp"
-        android:layout_marginRight="90dp"
-        app:srcCompat="@drawable/ic_dot" />
+        app:srcCompat="@drawable/ic_mainlogo" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Travel</string>
+    <string name="app_name">갈래말래</string>
     <string name="facebook_app_id">391080511351341</string>//facebook 갈래말래 App_id
     <string name="fb_login_protocol_scheme">fb391080511351341</string>
     <string name="kakao_app_key">9bebd41e1c208b98ff5b9b2fd16d8529</string>

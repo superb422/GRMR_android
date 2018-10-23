@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,6 +15,9 @@ import android.widget.TextView;
 
 import com.example.syl.grmr.Main.MainActivity;
 import com.example.syl.grmr.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class register_step6 extends AppCompatActivity {
     LinearLayout linear1;
@@ -46,7 +51,6 @@ public class register_step6 extends AppCompatActivity {
                 startActivity(stepfinish);
             }
         });
-
     }
     @Override
     public void onBackPressed() {

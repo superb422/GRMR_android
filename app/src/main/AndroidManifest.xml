@@ -11,9 +11,8 @@
     <application
         android:name=".Login.GlobalApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_mainlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
@@ -24,11 +23,12 @@
             android:value="@string/kakao_app_key" />
 
         <activity android:name=".Login.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>>
+
         </activity>
 
         <provider
@@ -46,17 +46,14 @@
         <activity android:name=".Profile_Register.register_step4" />
         <activity
             android:name=".Login.EmailregisterActivity"
-            android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:windowSoftInputMode="adjustResize|stateAlwaysVisible">
         </activity>
         <activity android:name=".Profile_Register.register_step3" />
         <activity android:name=".Profile_Register.register_step5" />
         <activity android:name=".Profile_Register.register_step6" />
         <activity android:name=".Main.MainActivity" />
+        <activity android:name=".Travel.Travel_ticket_select" />
+        <activity android:name=".Travel.NoTicket"></activity>
     </application>
 
 </manifest>
