@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.syl.grmr">
+    package="com.example.dongh.grmr">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -23,17 +23,17 @@
             android:value="@string/kakao_app_key" />
 
         <activity android:name=".Login.LoginActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            >
         </activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.example.syl.grmr.provider"
+            android:authorities="com.example.dongh.grmr.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -46,14 +46,15 @@
         <activity android:name=".Profile_Register.register_step4" />
         <activity
             android:name=".Login.EmailregisterActivity"
-            android:windowSoftInputMode="adjustResize|stateAlwaysVisible">
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
         <activity android:name=".Profile_Register.register_step3" />
         <activity android:name=".Profile_Register.register_step5" />
         <activity android:name=".Profile_Register.register_step6" />
         <activity android:name=".Main.MainActivity" />
         <activity android:name=".Travel.Travel_ticket_select" />
-        <activity android:name=".Travel.NoTicket"></activity>
+        <activity android:name=".Travel.NoTicket" />
+        <activity android:name=".Travel.TravelSchedule" />
+        <activity android:name=".Main.CategoryActivity"></activity>
     </application>
 
 </manifest>

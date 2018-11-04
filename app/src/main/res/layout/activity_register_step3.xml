@@ -86,7 +86,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="200dp">
 
-        <com.example.syl.grmr.Profile_Register.WheelView
+        <com.example.dongh.grmr.Profile_Register.WheelView
             android:id="@+id/main_wv"
             android:layout_width="match_parent"
             android:layout_height="280dp" />
