@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "19862419601",
+    "firebase_url": "https://grmrandroid-189fe.firebaseio.com",
+    "project_id": "grmrandroid-189fe",
+    "storage_bucket": "grmrandroid-189fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19862419601:android:1a4c6c567ac0f550",
+        "android_client_info": {
+          "package_name": "com.example.dongh.grmr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19862419601-h868d8ddq1p033a4tse716eo8a8ohlo6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4SR7iKADJJkwRTx1TUCCmJ0Qor_-Ntoo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
