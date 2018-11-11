@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.dongh.grmr.Constructor.InformationOfTravel.*;
+
 import com.example.dongh.grmr.R;
 
 import java.util.ArrayList;
@@ -12,7 +14,7 @@ import java.util.List;
 
 public class Travel_ticket_select extends AppCompatActivity {
 
-    private TicketDataAdapter mAdapter;
+    /*private TicketDataAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,6 @@ public class Travel_ticket_select extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(mAdapter);
-    }
+    }*/
 
 }
