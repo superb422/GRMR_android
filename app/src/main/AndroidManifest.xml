@@ -53,8 +53,8 @@
         <activity android:name=".Main.MainActivity" />
         <activity android:name=".Travel.Travel_ticket_select" />
         <activity android:name=".Travel.NoTicket" />
-        <activity android:name=".Travel.TravelSchedule" />
-        <activity android:name=".Main.CategoryActivity"></activity>
+        <activity android:name=".Main.CategoryActivity" />
+        <activity android:name=".Travel.Travel_Schedule"></activity>
     </application>
 
 </manifest>
