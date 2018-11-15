@@ -74,11 +74,11 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:drawableRight="@drawable/ic_nextarrow"
-        android:textCursorDrawable="@drawable/cursor_color"
         android:ems="10"
         android:hint="닉네임 입력"
         android:inputType="textPersonName"
         android:textColorHint="#d6d6d6"
+        android:textCursorDrawable="@drawable/cursor_color"
         android:textSize="16dp"
         android:theme="@style/EditTextStyle" />
 

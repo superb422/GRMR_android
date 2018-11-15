@@ -23,6 +23,7 @@ import com.example.dongh.grmr.Main.MainActivity;
 import com.example.dongh.grmr.Profile_Register.register_step1;
 import com.example.dongh.grmr.R;
 import com.example.dongh.grmr.Travel.Travel_Schedule;
+import com.example.dongh.grmr.Travel.region_search;
 import com.example.dongh.grmr.service.ServerService;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -100,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Intent login2Intent = new Intent(LoginActivity.this, register_step1.class);
-                Intent login2Intent = new Intent(LoginActivity.this, Travel_Schedule.class);
+                Intent login2Intent = new Intent(LoginActivity.this, region_search.class);
                 LoginActivity.this.startActivity(login2Intent);
             }
         });

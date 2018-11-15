@@ -54,7 +54,8 @@
         <activity android:name=".Travel.Travel_ticket_select" />
         <activity android:name=".Travel.NoTicket" />
         <activity android:name=".Main.CategoryActivity" />
-        <activity android:name=".Travel.Travel_Schedule"></activity>
+        <activity android:name=".Travel.Travel_Schedule" />
+        <activity android:name=".Travel.region_search"></activity>
     </application>
 
 </manifest>
