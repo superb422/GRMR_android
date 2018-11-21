@@ -6,6 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.dongh.grmr.R;
+import com.example.dongh.grmr.Travel.Adapter.TicketDataAdapter;
+import com.example.dongh.grmr.Travel.Constructor.Ticket;
 
 import java.util.ArrayList;
 import java.util.List;

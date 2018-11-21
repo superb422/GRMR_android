@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.dongh.grmr.R;
-import com.example.dongh.grmr.Travel.Activity.NoTicket;
-import com.example.dongh.grmr.Travel.Activity.Travel_ticket_select;
+import com.example.dongh.grmr.Travel.NoTicket;
+import com.example.dongh.grmr.Travel.Travel_ticket_select;
 
 
 public class MainActivity extends AppCompatActivity {
