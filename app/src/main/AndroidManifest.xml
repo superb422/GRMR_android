@@ -51,11 +51,12 @@
         <activity android:name=".Profile_Register.register_step5" />
         <activity android:name=".Profile_Register.register_step6" />
         <activity android:name=".Main.MainActivity" />
-        <activity android:name=".Travel.Travel_ticket_select" />
-        <activity android:name=".Travel.NoTicket" />
+        <activity android:name=".Matching_register.Travel_ticket_select" />
+        <activity android:name=".Matching_register.NoTicket" />
         <activity android:name=".Main.CategoryActivity" />
-        <activity android:name=".Travel.Travel_Schedule" />
-        <activity android:name=".Travel.region_search"></activity>
+        <activity android:name=".Matching_register.Travel_Schedule" />
+        <activity android:name=".Matching_register.region_search"
+            android:windowSoftInputMode="adjustResize|adjustPan"/>
     </application>
 
 </manifest>

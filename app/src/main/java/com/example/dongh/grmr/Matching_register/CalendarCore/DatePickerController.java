@@ -22,70 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ***********************************************************************************/
-package com.example.dongh.grmr.Travel.CalendarCore;
+package com.example.dongh.grmr.Matching_register.CalendarCore;
 
-public class SelectModel {
-    private int fristYear;
-    private int fristMonth;
-    private int fristDay;
-    private int lastYear;
-    private int lastMonth;
-    private int lastDay;
-    private boolean isSelectd;
+public interface DatePickerController {
+	public abstract int getMaxYear();
 
-    public int getFristYear() {
-        return fristYear;
-    }
+	public abstract void onDayOfMonthSelected(int year, int month, int day);
 
-    public void setFristYear(int fristYear) {
-        this.fristYear = fristYear;
-    }
+    public abstract void onDateRangeSelected(final AirMonthAdapter.SelectedDays<AirMonthAdapter.CalendarDay> selectedDays);
 
-    public int getFristMonth() {
-        return fristMonth;
-    }
-
-    public void setFristMonth(int fristMonth) {
-        this.fristMonth = fristMonth;
-    }
-
-    public int getFristDay() {
-        return fristDay;
-    }
-
-    public void setFristDay(int fristDay) {
-        this.fristDay = fristDay;
-    }
-
-    public int getLastYear() {
-        return lastYear;
-    }
-
-    public void setLastYear(int lastYear) {
-        this.lastYear = lastYear;
-    }
-
-    public int getLastMonth() {
-        return lastMonth;
-    }
-
-    public void setLastMonth(int lastMonth) {
-        this.lastMonth = lastMonth;
-    }
-
-    public int getLastDay() {
-        return lastDay;
-    }
-
-    public void setLastDay(int lastDay) {
-        this.lastDay = lastDay;
-    }
-
-    public boolean isSelectd() {
-        return isSelectd;
-    }
-
-    public void setSelectd(boolean selectd) {
-        isSelectd = selectd;
-    }
 }

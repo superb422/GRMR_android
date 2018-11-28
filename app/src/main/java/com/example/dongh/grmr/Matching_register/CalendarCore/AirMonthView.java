@@ -22,7 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ***********************************************************************************/
-package com.example.dongh.grmr.Travel.CalendarCore;
+package com.example.dongh.grmr.Matching_register.CalendarCore;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -40,7 +40,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.dongh.grmr.R;
-import com.example.dongh.grmr.Travel.CalendarCore.CalendarUtil.AirCalendarUtils;
+import com.example.dongh.grmr.Matching_register.CalendarCore.CalendarUtil.AirCalendarUtils;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;

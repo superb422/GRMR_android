@@ -22,7 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ***********************************************************************************/
-package com.example.dongh.grmr.Travel.CalendarCore.CalendarUtil;
+package com.example.dongh.grmr.Matching_register.CalendarCore.CalendarUtil;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

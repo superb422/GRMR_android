@@ -1,4 +1,4 @@
-package com.example.dongh.grmr.Travel;
+package com.example.dongh.grmr.Matching_register;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,14 +7,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dongh.grmr.R;
-import com.example.dongh.grmr.Travel.CalendarCore.AirMonthAdapter;
-import com.example.dongh.grmr.Travel.CalendarCore.CalendarUtil.AirCalendarUtils;
-import com.example.dongh.grmr.Travel.CalendarCore.DatePickerController;
-import com.example.dongh.grmr.Travel.CalendarCore.DayPickerView;
-import com.example.dongh.grmr.Travel.CalendarCore.SelectModel;
+import com.example.dongh.grmr.Matching_register.CalendarCore.AirMonthAdapter;
+import com.example.dongh.grmr.Matching_register.CalendarCore.CalendarUtil.AirCalendarUtils;
+import com.example.dongh.grmr.Matching_register.CalendarCore.DatePickerController;
+import com.example.dongh.grmr.Matching_register.CalendarCore.DayPickerView;
+import com.example.dongh.grmr.Matching_register.CalendarCore.SelectModel;
 
 import org.joda.time.DateTime;
 

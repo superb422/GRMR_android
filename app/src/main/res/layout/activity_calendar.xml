@@ -173,7 +173,7 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <com.example.dongh.grmr.Travel.CalendarCore.DayPickerView
+        <com.example.dongh.grmr.Matching_register.CalendarCore.DayPickerView
             android:id="@+id/pickerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -187,7 +187,8 @@
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="#517ae4">
+        android:layout_marginBottom="6.5dp"
+        android:background="@drawable/ic_schedulebtn">
 
         <TextView
             android:id="@+id/duration"

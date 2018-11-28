@@ -1,4 +1,4 @@
-package com.example.dongh.grmr.Travel.Adapter;
+package com.example.dongh.grmr.Matching_register.Adapter;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.dongh.grmr.R;
-import com.example.dongh.grmr.Travel.Constructor.Ticket;
-import com.example.dongh.grmr.Travel.Travel_ticket_select;
+import com.example.dongh.grmr.Matching_register.Constructor.Ticket;
+import com.example.dongh.grmr.Matching_register.Travel_ticket_select;
 
 import java.util.List;
 

@@ -8,22 +8,18 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dongh.grmr.Constructor.Contributor;
 import com.example.dongh.grmr.Main.MainActivity;
-import com.example.dongh.grmr.Profile_Register.register_step1;
+import com.example.dongh.grmr.Matching_register.Travel_Schedule;
 import com.example.dongh.grmr.R;
-import com.example.dongh.grmr.Travel.Travel_Schedule;
-import com.example.dongh.grmr.Travel.region_search;
+import com.example.dongh.grmr.Matching_register.region_search;
 import com.example.dongh.grmr.service.ServerService;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -101,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Intent login2Intent = new Intent(LoginActivity.this, register_step1.class);
-                Intent login2Intent = new Intent(LoginActivity.this, region_search.class);
+                Intent login2Intent = new Intent(LoginActivity.this, Travel_Schedule.class);
                 LoginActivity.this.startActivity(login2Intent);
             }
         });

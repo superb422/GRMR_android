@@ -22,14 +22,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ***********************************************************************************/
-package com.example.dongh.grmr.Travel.CalendarCore;
+package com.example.dongh.grmr.Matching_register.CalendarCore;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Parcelable;
 
-import com.example.dongh.grmr.Travel.Travel_Schedule;
+import com.example.dongh.grmr.Matching_register.Travel_Schedule;
 
 import java.util.ArrayList;
 

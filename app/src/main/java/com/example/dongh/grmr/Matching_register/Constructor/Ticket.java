@@ -1,5 +1,5 @@
 
-package com.example.dongh.grmr.Travel.Constructor;
+package com.example.dongh.grmr.Matching_register.Constructor;
 
 public class Ticket {
 
