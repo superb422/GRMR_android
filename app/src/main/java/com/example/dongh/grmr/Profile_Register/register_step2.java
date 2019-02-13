@@ -2,78 +2,73 @@ package com.example.dongh.grmr.Profile_Register;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.dongh.grmr.Profile_Register.Util.job_dialog;
 import com.example.dongh.grmr.R;
 
-public class register_step2 extends AppCompatActivity {
+public class register_step2 extends AppCompatActivity implements View.OnClickListener{
 
-    ImageView btnman,btngirl,back;
-    TextView textman,textgirl;
-    Button step2;
-    LinearLayout manLayout,girlLayout;
+    ImageView sexbtn,back,nxtbtn;
+    TextView jobtxt;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_step2);
 
-        btnman = (ImageView)findViewById(R.id.btn_man); btngirl = (ImageView)findViewById(R.id.btn_girl);
-        textman = (TextView)findViewById(R.id.man_text); textgirl = (TextView)findViewById(R.id.girl_text);
-        step2=(Button)findViewById(R.id.step2_btn); back=(ImageView)findViewById(R.id.step2_back);
-        manLayout=(LinearLayout)findViewById(R.id.man_layout); girlLayout=(LinearLayout)findViewById(R.id.girl_layout);
+        sexbtn = (ImageView)findViewById(R.id.sexbtn);
+        nxtbtn=(ImageView)findViewById(R.id.step2_btn); back=(ImageView)findViewById(R.id.step2_back);
+        jobtxt=(TextView)findViewById(R.id.job_txt);
 
-        manLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btnman.setImageResource(R.drawable.ic_man_clicked);
-                textman.setTextColor(Color.rgb(81,122,228));
-                btngirl.setImageResource(R.drawable.ic_girl);
-                textgirl.setTextColor(Color.rgb(219,219,219));
-                step2.setBackgroundColor(Color.rgb(81,122,228));
-                step2.setTextColor(Color.rgb(255,255,255));
-            }
-        });
+        nxtbtn.setOnClickListener(this);
+        back.setOnClickListener(this);
+        jobtxt.setOnClickListener(this);
+    }
 
-        girlLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btnman.setImageResource(R.drawable.ic_man);
-                textman.setTextColor(Color.rgb(219,219,219));
-                btngirl.setImageResource(R.drawable.ic_girl_clicked);
-                textgirl.setTextColor(Color.rgb(81,122,228));
-                step2.setBackgroundColor(Color.rgb(81,122,228));
-                step2.setTextColor(Color.rgb(255,255,255));
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
 
-        step2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            case R.id.step2_btn:
                 Intent step2intent = new Intent(register_step2.this,register_step3.class);
-                //step2intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 쌓여있는 액티비티들 전부 삭제
+                step2intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(step2intent);
-                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);  // 오른쪽 화면이 들어오면서 왼쪽화면 아웃
                 finish();
-            }
-        });
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent step2back = new Intent(register_step2.this,register_step1.class);
+                break;
+            case R.id.step2_back:
+                Intent step2back = new Intent(register_step2.this, register_step1.class);
                 step2back.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(step2back);
                 overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
                 finish();
-            }
-        });
+                break;
+            case R.id.job_txt:
+                job_dialog dialog = new job_dialog(this);
+                dialog.JobDialogListener(new job_dialog.JobDialogListener() {
+                    @Override
+                    public void onPositiveClicked(String job) {
+                        jobtxt.setText(job);
+                        jobtxt.setTextColor(Color.rgb(81,122,228));
+                    }
+
+                    @Override
+                    public void onNegativeClicked() {
+
+                    }
+                });
+                dialog.show();
+                break;
+        }
     }
+
+
 
     @Override
     public void onBackPressed() {

@@ -25,11 +25,11 @@ public interface ServerService {
 //test
     /******************************POST************************************/
     @FormUrlEncoded
-    @POST("/galmal/signin/facebook")
+    @POST("/galmal/signup/facebook")
     Call<Contributor>Facebook_token(@Field("access_token") String FaceToken);
 
     @FormUrlEncoded
-    @POST("/galmal/signin/kakao")
+    @POST("/galmal/signup/kakao")
     Call<Contributor>Kakao_token(@Field("access_token") String KakaoToken);
 
 
@@ -56,13 +56,13 @@ public interface ServerService {
 
     /****************************GET*****************************************/
     /*
-    @GET("/galmal/signin/email")
+    @GET("/galmal/signup/email")
     Call<List<GM_Users>> userList(
             @Query("email") String email,
             @Query("password") String password
     );
     */
-    @GET("/galmal/signin/email")
+    @GET("/galmal/signup/email")
     Call<GM_Users> userList(
             @Query("email") String email,
             @Query("password") String password

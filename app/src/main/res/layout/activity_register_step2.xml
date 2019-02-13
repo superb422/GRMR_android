@@ -47,107 +47,138 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/step2_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="#e2e2e2"
-        android:text="다음"
-        android:textColor="#585858"
-        android:textSize="17dp" />
-
     <ImageView
         android:id="@+id/step2_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="32dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="32dp"
         app:srcCompat="@drawable/ic_backbtn" />
 
     <TextView
-        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="141dp"
-        android:text="성별을 선택해주세요."
+        android:layout_marginTop="70dp"
+        android:layout_toEndOf="@+id/step2_back"
+        android:text="성별,나이,직업을 알려주세요."
         android:textColor="#474747"
-        android:textSize="20dp" />
+        android:textSize="19sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_toEndOf="@+id/step2_back"
+        android:text="개인정보는 프로필의 게시용으로만 사용됩니다."
+        android:textColor="#9e9e9e"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp"
+        android:layout_toEndOf="@+id/step2_back"
+        android:text="성별"
+        android:textColor="#474747" />
+
+    <ImageView
+        android:id="@+id/sexbtn"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="179dp"
+        android:layout_toEndOf="@+id/step2_back"
+        app:srcCompat="@drawable/ic_manbtn" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="123dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/btn_man"
-        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="245dp"
+        android:layout_toEndOf="@+id/step2_back"
         android:orientation="horizontal">
 
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="100dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="나이"
+            android:textColor="#474747" />
 
-            <LinearLayout
-                android:id="@+id/man_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/btn_man"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_man" />
-
-                <TextView
-                    android:id="@+id/man_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="남자"
-                    android:textColor="#dbdbdb"
-                    android:textSize="17.2dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="100dp"
+        <EditText
+            android:id="@+id/age_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_weight="1"
+            android:background="@null"
             android:gravity="end"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/girl_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/btn_girl"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_girl" />
-
-                <TextView
-                    android:id="@+id/girl_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="여자"
-                    android:textColor="#dbdbdb"
-                    android:textSize="17.2dp" />
-            </LinearLayout>
-        </LinearLayout>
+            android:hint="입력하기"
+            android:textColor="#517ae4"
+            android:textColorHint="#c0c0c0"
+            android:textSize="14sp" />
     </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="280dp"
+        android:layout_toEndOf="@+id/step2_back"
+        android:background="#e4e4e4" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="308dp"
+        android:layout_toEndOf="@+id/step2_back"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="직업"
+            android:textColor="#474747" />
+
+        <TextView
+            android:id="@+id/job_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:gravity="end"
+            android:text="입력하기"
+            android:textColor="#c0c0c0" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/step2_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="505dp"
+        app:srcCompat="@drawable/ic_select_btn" />
+
+    <TextView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/step2_btn"
+        android:layout_alignLeft="@id/step2_btn"
+        android:layout_alignRight="@id/step2_btn"
+        android:layout_alignTop="@id/step2_btn"
+        android:gravity="center"
+
+        android:text="다음"
+        android:textColor="#979797"
+        android:textSize="16dp" />
 
 </RelativeLayout>

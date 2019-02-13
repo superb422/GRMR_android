@@ -43,7 +43,7 @@ public class SoftKeyboard implements View.OnFocusChangeListener
         if(!isKeyboardShow)
         {
             layoutBottom = getLayoutCoordinates();
-            im.toggleSoftInput(0, InputMethodManager.SHOW_IMPLICIT);
+            im.toggleSoftInput(0, InputMethodManager.RESULT_HIDDEN);
             softKeyboardThread.keyboardOpened();
             isKeyboardShow = true;
         }
@@ -53,7 +53,7 @@ public class SoftKeyboard implements View.OnFocusChangeListener
     {
         if(isKeyboardShow)
         {
-            im.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+            im.toggleSoftInput(InputMethodManager.RESULT_HIDDEN, 0);
             isKeyboardShow = false;
         }
     }
@@ -129,7 +129,7 @@ public class SoftKeyboard implements View.OnFocusChangeListener
             {
                 layoutBottom = getLayoutCoordinates();
                 softKeyboardThread.keyboardOpened();
-                isKeyboardShow = true;
+                isKeyboardShow = false;
             }
         }
     }

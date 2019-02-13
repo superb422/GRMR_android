@@ -22,7 +22,7 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
 
-        <activity android:name=".Login.LoginActivity">
+        <activity android:name=".Login.Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,20 +43,26 @@
 
         <activity android:name=".Profile_Register.register_step1" />
         <activity android:name=".Profile_Register.register_step2" />
-        <activity android:name=".Profile_Register.register_step4" />
         <activity
-            android:name=".Login.EmailregisterActivity"
-            android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
+            android:name=".Login.Activity.EmailregisterActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".Profile_Register.register_step3" />
+        <activity android:name=".Profile_Register.register_step4" />
         <activity android:name=".Profile_Register.register_step5" />
-        <activity android:name=".Profile_Register.register_step6" />
         <activity android:name=".Main.MainActivity" />
         <activity android:name=".Matching_register.Travel_ticket_select" />
         <activity android:name=".Matching_register.NoTicket" />
         <activity android:name=".Main.CategoryActivity" />
         <activity android:name=".Matching_register.Travel_Schedule" />
-        <activity android:name=".Matching_register.region_search"
-            android:windowSoftInputMode="adjustResize|adjustPan"/>
+        <activity android:name=".etc.alarm" />
+        <activity
+            android:name=".Matching_register.region_search"
+            android:windowSoftInputMode="adjustResize|adjustPan" />
+        <activity android:name=".Matching_register.Constructor.matching_check" />
+        <activity android:name=".etc.alarm" />
+        <activity android:name=".Settings.MyPage" />
+        <activity android:name=".Login.Activity.pwfind" />
+        <activity android:name=".Login.Activity.signup" />
     </application>
 
 </manifest>
