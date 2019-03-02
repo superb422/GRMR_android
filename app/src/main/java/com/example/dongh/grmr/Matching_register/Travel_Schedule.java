@@ -1,6 +1,7 @@
 package com.example.dongh.grmr.Matching_register;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -243,7 +244,7 @@ public class Travel_Schedule extends AppCompatActivity implements DatePickerCont
             if(DURATION!=0) {
                 String duration_str1 = String.valueOf(DURATION);
                 String duration_str2 = String.valueOf(DURATION + 1);
-                rl_done_btn.setBackgroundResource(R.drawable.ic_schedulebtn);
+                rl_done_btn.setBackgroundColor(Color.rgb(78,131,176));
                 duration_text.setText(duration_str1 + "박 " + duration_str2 + "일의 여행등록");
 
                 rl_done_btn.setOnClickListener(new View.OnClickListener() {

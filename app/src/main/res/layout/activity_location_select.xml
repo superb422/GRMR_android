@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loc_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Activity에서는 fragment로 구현해야되지만
+    Fragment로 구현하기위해서는 MapView를 사용해야함-->
+
+
+    <ImageView
+        android:id="@+id/loc_backbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="21dp"
+        app:srcCompat="@drawable/ic_exitbtn" />
+
+    <TextView
+        android:id="@+id/loc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/loc_backbtn"
+        android:layout_centerHorizontal="true"
+        android:text="위치 지정"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <fragment
+        android:id="@+id/google_map"
+        class="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp" />
+
+    <Button
+        android:id="@+id/loc_btn"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:background="@drawable/btn_bg_location"
+        android:text="설정 완료"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/loc_search"
+        android:layout_width="262dp"
+        android:layout_height="46dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/loc_backbtn"
+        android:layout_marginTop="78dp"
+        android:background="@drawable/edittext_bg_location"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        android:textSize="14sp" />
+
+
+</RelativeLayout>

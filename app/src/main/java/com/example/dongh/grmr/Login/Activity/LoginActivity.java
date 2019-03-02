@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.example.dongh.grmr.Constructor.Contributor;
 import com.example.dongh.grmr.Main.MainActivity;
-import com.example.dongh.grmr.Profile_Register.register_step5;
+import com.example.dongh.grmr.Matching_register.Travel_Schedule;
 import com.example.dongh.grmr.R;
 import com.example.dongh.grmr.service.ServerService;
 import com.facebook.CallbackManager;
@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Intent login2Intent = new Intent(LoginActivity.this, register_step1.class);
-                Intent login2Intent = new Intent(LoginActivity.this, register_step5.class);
+                Intent login2Intent = new Intent(LoginActivity.this, Travel_Schedule.class);
                 LoginActivity.this.startActivity(login2Intent);
             }
         });
