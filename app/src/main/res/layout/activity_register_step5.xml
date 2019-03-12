@@ -38,28 +38,17 @@
         android:textColor="#9e9e9e"
         android:textSize="12sp" />
 
-
-    <ImageView
+    <Button
         android:id="@+id/step5_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="505dp"
-        app:srcCompat="@drawable/ic_select_btn" />
-
-    <TextView
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/step5_btn"
-        android:layout_alignLeft="@id/step5_btn"
-        android:layout_alignRight="@id/step5_btn"
-        android:layout_alignTop="@id/step5_btn"
-        android:gravity="center"
-
-        android:text="등록완료"
+        android:background="@drawable/btn_gray"
+        android:text="다음"
         android:textColor="#979797"
-        android:textSize="16dp" />
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"

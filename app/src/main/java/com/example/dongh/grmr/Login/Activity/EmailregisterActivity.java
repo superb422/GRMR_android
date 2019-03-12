@@ -43,7 +43,7 @@ public class EmailregisterActivity extends AppCompatActivity implements View.OnC
         pw_find = (TextView)findViewById(R.id.pw_find);
         //emailtext.requestFocus();
 
-        emailtext.setTextColor(Color.parseColor("#FFFFFF"));
+        //emailtext.setTextColor(Color.parseColor("#000000"));
 
         pw_find.setOnClickListener(new View.OnClickListener() {
             @Override

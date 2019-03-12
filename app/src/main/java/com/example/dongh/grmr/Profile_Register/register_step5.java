@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.dongh.grmr.Main.MainActivity;
 import com.example.dongh.grmr.Profile_Register.Util.loc_style_dialog;
 import com.example.dongh.grmr.R;
 
@@ -15,10 +17,11 @@ import java.util.List;
 
 public class register_step5 extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView step5, question1, question2, question3;
+    ImageView step5_back, question1, question2, question3;
     ImageView [] style_locs_img = new ImageView[6];
     TextView [] style_locs_txt = new TextView[6];
     String fileName1,fileName2;
+    Button step5_btn;
     LinearLayout loc_layout;
     int i=0;
 
@@ -27,13 +30,15 @@ public class register_step5 extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_step5);
 
-        step5 = (ImageView) findViewById(R.id.step5_back);
+        step5_back = (ImageView) findViewById(R.id.step5_back);
+        step5_btn = (Button)findViewById(R.id.step5_btn);
         question1 = (ImageView) findViewById(R.id.step5_q1);
         question2 = (ImageView) findViewById(R.id.step5_q2);
         question3 = (ImageView) findViewById(R.id.step5_q3);
 
 
-        step5.setOnClickListener(this);
+        step5_btn.setOnClickListener(this);
+        step5_back.setOnClickListener(this);
         question1.setOnClickListener(this);
         question2.setOnClickListener(this);
         question3.setOnClickListener(this);
@@ -53,6 +58,12 @@ public class register_step5 extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+
+            case R.id.step5_btn:
+                Intent step5 = new Intent(register_step5.this, MainActivity.class);
+                step5.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(step5);
+                break;
 
             case R.id.step5_back:
                 Intent step5back = new Intent(register_step5.this, register_step4.class);

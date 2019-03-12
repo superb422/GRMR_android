@@ -200,25 +200,17 @@
     </LinearLayout>
 
 
-    <RelativeLayout
+    <Button
         android:id="@+id/rl_done_btn"
-        android:layout_width="290dp"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="6.5dp"
-        android:background="#4e83b0">
-
-        <TextView
-            android:id="@+id/duration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="저장"
-            android:textColor="#ffffff"
-            android:textSize="15sp" />
-    </RelativeLayout>
+        android:layout_marginTop="517dp"
+        android:background="@drawable/btn_gray"
+        android:text="등록완료"
+        android:textColor="#979797"
+        android:textStyle="bold" />
 
     <View
         android:layout_width="wrap_content"

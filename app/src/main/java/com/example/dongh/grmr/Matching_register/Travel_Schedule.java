@@ -2,20 +2,20 @@ package com.example.dongh.grmr.Matching_register;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.dongh.grmr.Matching_register.Constructor.matching_check;
-import com.example.dongh.grmr.R;
 import com.example.dongh.grmr.Matching_register.CalendarCore.AirMonthAdapter;
 import com.example.dongh.grmr.Matching_register.CalendarCore.CalendarUtil.AirCalendarUtils;
 import com.example.dongh.grmr.Matching_register.CalendarCore.DatePickerController;
 import com.example.dongh.grmr.Matching_register.CalendarCore.DayPickerView;
 import com.example.dongh.grmr.Matching_register.CalendarCore.SelectModel;
+import com.example.dongh.grmr.Matching_register.Constructor.matching_check;
+import com.example.dongh.grmr.R;
 
 import org.joda.time.DateTime;
 
@@ -46,7 +46,7 @@ public class Travel_Schedule extends AppCompatActivity implements DatePickerCont
     public final static String EXTRA_MAX_YEAR = "MAX_YEAR";
 
     private DayPickerView pickerView;
-    private RelativeLayout rl_done_btn;
+    private Button rl_done_btn;
     private TextView duration_text;
 
     private String SELECT_START_DATE = "";
@@ -153,22 +153,6 @@ public class Travel_Schedule extends AppCompatActivity implements DatePickerCont
 
         pickerView.setController(this);
 
-
-//        rl_done_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if((SELECT_START_DATE == null || SELECT_START_DATE.equals("")) && (SELECT_END_DATE == null || SELECT_END_DATE.equals(""))){
-//                    SELECT_START_DATE = "";
-//                    SELECT_END_DATE = "";
-//                }else{
-//
-//                }
-//
-//                //Toast.makeText(getApplicationContext(), "Select Date range : " +SELECT_START_DATE + " ~ " + SELECT_END_DATE, Toast.LENGTH_SHORT).show();
-//
-//                //Toast.makeText(getApplicationContext(), "Select Date range : " +SELECT_START_DATE + " ~ " + SELECT_END_DATE, Toast.LENGTH_SHORT).show();
-//            }
-//        });
     }
 
     @Override
@@ -238,14 +222,14 @@ public class Travel_Schedule extends AppCompatActivity implements DatePickerCont
             SELECT_END_DATE = endDate;
             DURATION = diffDays;
 
-            duration_text = findViewById(R.id.duration);
-            rl_done_btn = findViewById(R.id.rl_done_btn);
+            rl_done_btn = (Button)findViewById(R.id.rl_done_btn);
 
             if(DURATION!=0) {
                 String duration_str1 = String.valueOf(DURATION);
                 String duration_str2 = String.valueOf(DURATION + 1);
-                rl_done_btn.setBackgroundColor(Color.rgb(78,131,176));
-                duration_text.setText(duration_str1 + "박 " + duration_str2 + "일의 여행등록");
+                rl_done_btn.setBackgroundResource(R.drawable.btn_bg_schedule);
+                rl_done_btn.setText(duration_str1 + "박 " + duration_str2 + "일의 여행등록");
+                rl_done_btn.setTextColor(Color.rgb(255,255,255));
 
                 rl_done_btn.setOnClickListener(new View.OnClickListener() {
                     @Override

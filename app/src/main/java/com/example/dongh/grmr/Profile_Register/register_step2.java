@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +14,8 @@ import com.example.dongh.grmr.R;
 
 public class register_step2 extends AppCompatActivity implements View.OnClickListener{
 
-    ImageView sexbtn,back,nxtbtn;
+    ImageView sexbtn,back;
+    Button nxtbtn;
     TextView jobtxt;
 
 
@@ -23,7 +25,7 @@ public class register_step2 extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_register_step2);
 
         sexbtn = (ImageView)findViewById(R.id.sexbtn);
-        nxtbtn=(ImageView)findViewById(R.id.step2_btn); back=(ImageView)findViewById(R.id.step2_back);
+        nxtbtn=(Button) findViewById(R.id.step2_btn); back=(ImageView)findViewById(R.id.step2_back);
         jobtxt=(TextView)findViewById(R.id.job_txt);
 
         nxtbtn.setOnClickListener(this);

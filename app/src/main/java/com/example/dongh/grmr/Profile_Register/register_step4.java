@@ -12,10 +12,12 @@ import com.example.dongh.grmr.R;
 
 public class register_step4 extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView back,step4;
+    ImageView back;
+    Button step4;
     Button [] natures = new Button[16];
     boolean [] btn_clicked = new boolean[16];
     String fileName1;
+    int n_nature=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +33,17 @@ public class register_step4 extends AppCompatActivity implements View.OnClickLis
             btn_clicked[i]=true;
         }
 
-        step4=(ImageView) findViewById(R.id.step4_btn);
+        step4=(Button) findViewById(R.id.step4_btn);
         step4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent step4intent = new Intent(register_step4.this,register_step5.class);
-                step4intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(step4intent);
-                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
-                finish();
+                if(n_nature>4) {
+                    Intent step4intent = new Intent(register_step4.this, register_step5.class);
+                    step4intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(step4intent);
+                    overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                    finish();
+                }
             }
         });
 
@@ -65,9 +69,19 @@ public class register_step4 extends AppCompatActivity implements View.OnClickLis
                     natures[i].setBackgroundResource(R.drawable.ic_rectangle);
                     natures[i].setTextColor(Color.rgb(81, 122, 228));
                     btn_clicked[i]=false;
+                    n_nature++;
+                    if(n_nature>4) {
+                        step4.setBackgroundResource(R.drawable.btn_skyblue);
+                        step4.setTextColor(Color.rgb(255,255,255));
+                    }
                 }else{
                     natures[i].setBackgroundResource(0);
                     natures[i].setTextColor(Color.rgb(196, 196, 196));
+                    n_nature--;
+                    if(n_nature<5) {
+                        step4.setBackgroundResource(R.drawable.btn_gray);
+                        step4.setTextColor(Color.rgb(151, 151, 151));
+                    }
                     btn_clicked[i]=true;
                 }
 

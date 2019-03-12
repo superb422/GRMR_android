@@ -252,27 +252,18 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp">
 
-        <ImageView
+        <Button
             android:id="@+id/loc_style_btn"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/ic_select_btn" />
-
-        <TextView
-            android:id="@+id/loc_style_text"
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/loc_style_btn"
-            android:layout_alignLeft="@id/loc_style_btn"
-            android:layout_alignRight="@id/loc_style_btn"
-
-            android:layout_alignTop="@id/loc_style_btn"
-            android:gravity="center"
-            android:text="선택완료"
+            android:background="@drawable/btn_gray"
+            android:text="다음"
             android:textColor="#979797"
-            android:textSize="16dp" />
+            android:textStyle="bold" />
+
+
 
     </RelativeLayout>
 

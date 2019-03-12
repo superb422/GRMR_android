@@ -7,7 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.dongh.grmr.Login.ExtensionEditText;
@@ -16,7 +16,7 @@ import com.example.dongh.grmr.R;
 public class signup extends AppCompatActivity {
     ExtensionEditText signup_email,signup_pw,signup_pw2;
     TextView email_check,pw_check,pw_check2;
-    ImageView signup_btn;
+    Button signup_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class signup extends AppCompatActivity {
         signup_email=(ExtensionEditText)findViewById(R.id.signup_email); email_check=(TextView)findViewById(R.id.signup_email_check);
         signup_pw=(ExtensionEditText)findViewById(R.id.signup_email_pw); pw_check=(TextView)findViewById(R.id.signup_pw_check);
         signup_pw2=(ExtensionEditText)findViewById(R.id.signup_email_pw2); pw_check2=(TextView)findViewById(R.id.signup_pw_check2);
-        signup_btn=(ImageView)findViewById(R.id.signup_btn);
+        signup_btn=(Button) findViewById(R.id.signup_btn);
 
         signup_email.addTextChangedListener(new TextWatcher() {
 

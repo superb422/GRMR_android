@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,7 +16,7 @@ import com.example.dongh.grmr.R;
 
 public class register_step1 extends AppCompatActivity {
 
-    ImageView step1;
+    Button step1;
     EditText nickname;
     TextView checktext;
     ImageView exit;
@@ -25,7 +26,7 @@ public class register_step1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_step1);
 
-        step1 = (ImageView)findViewById(R.id.step1_btn);
+        step1 = (Button) findViewById(R.id.step1_btn);
         step1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +66,8 @@ public class register_step1 extends AppCompatActivity {
                 if(nickname.getText().toString().equals("썸웨어")){
                     checktext.setText("이미 사용중인 닉네임이에요.");
                     checktext.setTextColor(Color.parseColor("#D0021B"));
+                } else if(nickname.getText().toString().equals("")){
+                    checktext.setText(null);
                 } else {
                     checktext.setText("짝짝짝! 사용가능한 닉네임이에요.");
                     checktext.setTextColor(Color.parseColor("#517AE4"));

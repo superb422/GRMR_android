@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.media.MediaScannerConnection;
@@ -22,6 +23,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -37,7 +39,8 @@ import java.util.List;
 
 public class register_step3 extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView back, nxt_btn ,photo1, photo2, photo3, photo4;
+    ImageView back ,photo1, photo2, photo3, photo4;
+    Button nxt_btn;
     private static final int PICK_FROM_CAMERA = 1;
     private static final int PICK_FROM_ALBUM = 2;
     private static final int CROP_FROM_CAMERA = 3;
@@ -47,7 +50,9 @@ public class register_step3 extends AppCompatActivity implements View.OnClickLis
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.CAMERA};
     private static final int MULTIPLE_PERMISSIONS = 101;
-    int picture_index = 1; int n_index=1; // 필수 사진에서 부터 사진 추가되도록..하기 위한 조건변수
+    boolean picture_sub_lock0=true,picture_sub_lock1=true , picture_sub_lock2=true;
+    int picture_index = 1; // lock 풀기위한 index
+    //int n_index=1; // 필수 사진에서 부터 사진 추가되도록..하기 위한 조건변수
     private String mCurrentPhotoPath;
     public AlertDialog.Builder builder;
     String items[] = {"사진 찍기", "앨범에서 가져오기"};
@@ -73,15 +78,17 @@ public class register_step3 extends AppCompatActivity implements View.OnClickLis
             }
         });
 
-        nxt_btn = (ImageView)findViewById(R.id.step3_btn);
+        nxt_btn = (Button) findViewById(R.id.step3_btn);
         nxt_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent step3intent = new Intent(register_step3.this,register_step4.class);
-                step3intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(step3intent);
-                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);  // 오른쪽 화면이 들어오면서 왼쪽화면 아웃
-                finish();
+                if(!picture_sub_lock1) {
+                    Intent step3intent = new Intent(register_step3.this, register_step4.class);
+                    step3intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(step3intent);
+                    overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);  // 오른쪽 화면이 들어오면서 왼쪽화면 아웃
+                    finish();
+                }
             }
         });
 
@@ -151,6 +158,7 @@ public class register_step3 extends AppCompatActivity implements View.OnClickLis
         startActivityForResult(intent, PICK_FROM_ALBUM);
     }
 
+    /* 대표 -> 필수 -> 대표 -> 3번째가 안됨*/
     @Override
     public void onClick(View v) {
         builder = new AlertDialog.Builder(register_step3.this);
@@ -173,7 +181,7 @@ public class register_step3 extends AppCompatActivity implements View.OnClickLis
                         }).show();
                 break;
             case R.id.profile_photo2:
-                if(n_index>1) {
+                if(!picture_sub_lock0) {
                     picture_index = 2;
                     builder.setTitle("프로필 촬영")
                             .setItems(items, new DialogInterface.OnClickListener() {
@@ -192,7 +200,7 @@ public class register_step3 extends AppCompatActivity implements View.OnClickLis
                 }
                 break;
             case R.id.profile_photo3:
-                if(n_index>2) {
+                if(!picture_sub_lock1) {
                     picture_index = 3;
                     builder.setTitle("프로필 촬영")
                             .setItems(items, new DialogInterface.OnClickListener() {
@@ -211,7 +219,7 @@ public class register_step3 extends AppCompatActivity implements View.OnClickLis
                 }
                 break;
             case R.id.profile_photo4:
-                if(n_index==4) {
+                if(!picture_sub_lock2) {
                     picture_index = 4;
                     builder.setTitle("프로필 촬영")
                             .setItems(items, new DialogInterface.OnClickListener() {
@@ -302,19 +310,21 @@ public class register_step3 extends AppCompatActivity implements View.OnClickLis
                         photo1.setImageBitmap(thumbImage);
                         photo1.setBackground(new ShapeDrawable(new OvalShape()));
                         photo1.setClipToOutline(true);
-                        n_index=2;
+                        picture_sub_lock0=false;
                         break;
                     case 2:
                         photo2.setImageBitmap(thumbImage);
                         photo2.setBackground(new ShapeDrawable(new OvalShape()));
                         photo2.setClipToOutline(true);
-                        n_index=3;
+                        picture_sub_lock1=false;
+                        nxt_btn.setBackgroundResource(R.drawable.btn_skyblue);
+                        nxt_btn.setTextColor(Color.rgb(255,255,255));
                         break;
                     case 3:
                         photo3.setImageBitmap(thumbImage);
                         photo3.setBackground(new ShapeDrawable(new OvalShape()));
                         photo3.setClipToOutline(true);
-                        n_index=4;
+                        picture_sub_lock2=false;
                         break;
                     case 4:
                         photo4.setImageBitmap(thumbImage);

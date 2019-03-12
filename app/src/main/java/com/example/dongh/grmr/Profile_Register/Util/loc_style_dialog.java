@@ -7,8 +7,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.dongh.grmr.R;
 
@@ -25,8 +25,7 @@ public class loc_style_dialog extends Dialog implements View.OnClickListener{
     boolean [] btn_clicked = new boolean[10];
     private Context context;
     int select_num=0;
-    ImageView style_loc_btn;
-    TextView style_loc_txt;
+    Button style_loc_btn;
 
 
     public loc_style_dialog(Context context) {
@@ -51,8 +50,7 @@ public class loc_style_dialog extends Dialog implements View.OnClickListener{
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));  //다이얼로그의 배경을 투명으로 만듭니다.
 
         setContentView(R.layout.loc_style_dialog);
-        style_loc_btn=(ImageView)findViewById(R.id.loc_style_btn);
-        style_loc_txt=(TextView)findViewById(R.id.loc_style_text);
+        style_loc_btn=(Button) findViewById(R.id.loc_style_btn);
 
         for(int i=1;i< style_locs.length;i++)
         {
@@ -160,18 +158,18 @@ public class loc_style_dialog extends Dialog implements View.OnClickListener{
                 }
 
                 if (select_num > 2) {
-                    style_loc_btn.setImageResource(R.drawable.ic_skybluebtn);
-                    style_loc_txt.setTextColor(Color.rgb(255, 255, 255));
+                    style_loc_btn.setBackgroundResource(R.drawable.btn_skyblue);
+                    style_loc_btn.setTextColor(Color.rgb(255, 255, 255));
 
                 } else {
-                    style_loc_btn.setImageResource(R.drawable.ic_select_btn);
-                    style_loc_txt.setTextColor(Color.rgb(151, 151, 151));
+                    style_loc_btn.setBackgroundResource(R.drawable.btn_gray);
+                    style_loc_btn.setTextColor(Color.rgb(151, 151, 151));
                 }
 
 
             }
         }
-        if ((view.getId() == style_loc_btn.getId())&& select_num>2) {
+        if ((view.getId() == style_loc_btn.getId())&& select_num>2 &&select_num<6) {
             styleDialogListener.onSelectedStyle(style_loc_list);
             dismiss();
         }

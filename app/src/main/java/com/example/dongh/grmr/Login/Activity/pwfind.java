@@ -11,7 +11,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.dongh.grmr.Login.ExtensionEditText;
@@ -19,7 +19,7 @@ import com.example.dongh.grmr.R;
 
 public class pwfind extends AppCompatActivity {
 
-    ImageView checkbtn;
+    Button checkbtn;
     TextView checktext,pwtext1,pwtext2;
     ExtensionEditText pwfind_email;
     int com=0;
@@ -29,8 +29,8 @@ public class pwfind extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pwfind);
 
-        checkbtn = (ImageView) findViewById(R.id.pwfind_check);
-        checktext = (TextView) findViewById(R.id.pw_check_btn); pwtext1 = (TextView)findViewById(R.id.pw_text1); pwtext2 = (TextView)findViewById(R.id.pw_text2);
+        checkbtn = (Button) findViewById(R.id.pwfind_check);
+        pwtext1 = (TextView)findViewById(R.id.pw_text1); pwtext2 = (TextView)findViewById(R.id.pw_text2);
         pwfind_email = (ExtensionEditText) findViewById(R.id.pw_find_email);
 
 
@@ -63,13 +63,13 @@ public class pwfind extends AppCompatActivity {
                     });
                 }else {
                     if(com==1) {
-                        checkbtn.setImageResource(R.drawable.ic_skybluebtn);
-                        checktext.setText("재전송");
-                        checktext.setTextColor(Color.parseColor("#FFFFFF"));
+                        checkbtn.setBackgroundResource(R.drawable.btn_skyblue);
+                        checkbtn.setText("재전송");
+                        checkbtn.setTextColor(Color.parseColor("#FFFFFF"));
                     }else{
-                        checkbtn.setImageResource(R.drawable.ic_skybluebtn);
-                        checktext.setText("전송");
-                        checktext.setTextColor(Color.parseColor("#FFFFFF"));
+                        checkbtn.setBackgroundResource(R.drawable.btn_skyblue);
+                        checkbtn.setText("전송");
+                        checkbtn.setTextColor(Color.parseColor("#FFFFFF"));
                     }
 
                 }
@@ -88,7 +88,7 @@ public class pwfind extends AppCompatActivity {
                             if (motionEvent.getRawX() >= (pwfind_email.getRight() - pwfind_email.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                                 // your action here
                                 pwfind_email.setText(null);
-                                checkbtn.setImageResource(R.drawable.ic_select_btn);
+                                checkbtn.setBackgroundResource(R.drawable.btn_gray);
                                 checktext.setText("확인");
                                 checktext.setTextColor(Color.parseColor("#979797"));
 

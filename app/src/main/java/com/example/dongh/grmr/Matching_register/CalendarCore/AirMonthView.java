@@ -28,6 +28,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.Style;
@@ -39,8 +40,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.dongh.grmr.R;
 import com.example.dongh.grmr.Matching_register.CalendarCore.CalendarUtil.AirCalendarUtils;
+import com.example.dongh.grmr.R;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
@@ -94,6 +95,9 @@ class AirMonthView extends View {
     protected Paint mSelectedIntervalPaint;
     protected Paint mSelectedCirclePaint;
     protected Paint mWeekDayLinePaint;
+    protected Paint mTodayPaint;
+    protected Paint mTodaySelectedPaint;
+    protected Paint mTodayText;
     protected int mCurrentDayTextColor;
     protected int mMonthTextColor;
     protected int mYearTextColor;
@@ -139,6 +143,7 @@ class AirMonthView extends View {
     private OnDayClickListener mOnDayClickListener;
     private boolean isShowBooking = false;
     private boolean isMonthDayLabels = false;
+    private boolean todayClicked = false;
     private Context mContext;
     private ArrayList<String> bookingDateArray;
 
@@ -368,16 +373,11 @@ class AirMonthView extends View {
 
             int x = paddingDay * (2 + dayOffset * 2) + mPadding; // 왼쪽 패딩
 
-            if ((mMonth == mSelectedBeginMonth && mSelectedBeginDay == day && mSelectedBeginYear == mYear) || (mMonth == mSelectedLastMonth && mSelectedLastDay == day && mSelectedLastYear == mYear)) {
-                if (mDrawRect) {
-                    RectF rectF = new RectF(x - DAY_SELECTED_CIRCLE_SIZE, (y - MINI_DAY_NUMBER_TEXT_SIZE / 3) - DAY_SELECTED_CIRCLE_SIZE, x + DAY_SELECTED_CIRCLE_SIZE, (y - MINI_DAY_NUMBER_TEXT_SIZE / 3) + DAY_SELECTED_CIRCLE_SIZE);
-                    canvas.drawRoundRect(rectF, 150.0f, 150.0f, mSelectedCirclePaint);
-                } else {
-                    canvas.drawCircle(x, y - MINI_DAY_NUMBER_TEXT_SIZE / 3, DAY_SELECTED_CIRCLE_SIZE, mSelectedCirclePaint);
-                }
-            }
-
             if (mHasToday && (mToday == day)) {
+                RectF rectF = new RectF(x - DAY_SELECTED_CIRCLE_SIZE, (y - MINI_DAY_NUMBER_TEXT_SIZE / 3) - DAY_SELECTED_CIRCLE_SIZE, x + DAY_SELECTED_CIRCLE_SIZE, (y - MINI_DAY_NUMBER_TEXT_SIZE / 3) + DAY_SELECTED_CIRCLE_SIZE);
+                canvas.drawRoundRect(rectF, 150.0f, 150.0f, mTodayPaint);
+                canvas.drawText("오늘",x,y+35,mTodayText);
+
                 mMonthNumPaint.setColor(mCurrentDayTextColor);
                 mMonthNumPaint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             }
@@ -388,6 +388,19 @@ class AirMonthView extends View {
                 mMonthNumPaint.setColor(mDayNumColor);
                 mMonthNumPaint.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
             }
+
+            if ((mMonth == mSelectedBeginMonth && mSelectedBeginDay == day && mSelectedBeginYear == mYear) || (mMonth == mSelectedLastMonth && mSelectedLastDay == day && mSelectedLastYear == mYear)) {
+                if (mDrawRect) {
+                    RectF rectF = new RectF(x - DAY_SELECTED_CIRCLE_SIZE, (y - MINI_DAY_NUMBER_TEXT_SIZE / 3) - DAY_SELECTED_CIRCLE_SIZE, x + DAY_SELECTED_CIRCLE_SIZE, (y - MINI_DAY_NUMBER_TEXT_SIZE / 3) + DAY_SELECTED_CIRCLE_SIZE);
+                    canvas.drawRoundRect(rectF, 150.0f, 150.0f, mSelectedCirclePaint);
+                   /* if (mHasToday && (mToday == day))
+                        canvas.drawText("오늘",x,y+35,mTodayText);*/   // "오늘" 에서 "늘"이 짤림
+                } else {
+                    canvas.drawCircle(x, y - MINI_DAY_NUMBER_TEXT_SIZE / 3, DAY_SELECTED_CIRCLE_SIZE, mSelectedCirclePaint);
+                }
+            }
+
+
 
             if (AirCalendarUtils.isWeekend(mYear + "-" + (mMonth + 1) + "-" + day)) {
 
@@ -591,6 +604,21 @@ class AirMonthView extends View {
         mSelectedCirclePaint.setColor(mSelectedDaysBgColor);
         mSelectedCirclePaint.setTextAlign(Align.CENTER);
         mSelectedCirclePaint.setStyle(Style.FILL);
+
+        mTodayPaint = new Paint();
+        mTodayPaint.setColor(Color.rgb(216,216,216));
+
+        mTodayText = new Paint();
+        mTodayText.setColor(Color.rgb(74,74,74));
+        mTodayText.setTextSize(30);
+        mTodayText.setTextAlign(Align.CENTER);
+        mTodayText.setStyle(Style.FILL);
+
+        mTodaySelectedPaint = new Paint();
+        mTodaySelectedPaint.setColor(Color.rgb(255,255,255));
+        mTodaySelectedPaint.setTextSize(30);
+        mTodaySelectedPaint.setTextAlign(Align.CENTER);
+        mTodaySelectedPaint.setStyle(Style.FILL);
 
         mSelectedIntervalPaint = new Paint();
         mSelectedIntervalPaint.setAntiAlias(true);

@@ -71,27 +71,6 @@
         android:textSize="16dp"
         android:theme="@style/EditTextStyle" />
 
-    <ImageView
-        android:id="@+id/step1_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="505dp"
-        app:srcCompat="@drawable/ic_select_btn" />
-
-    <TextView
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/step1_btn"
-        android:layout_alignLeft="@id/step1_btn"
-        android:layout_alignRight="@id/step1_btn"
-        android:layout_alignTop="@id/step1_btn"
-        android:gravity="center"
-
-        android:text="다음"
-        android:textColor="#979797"
-        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/step1_text_check"
@@ -111,6 +90,19 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="32dp"
         app:srcCompat="@drawable/ic_exitbtn" />
+
+    <Button
+        android:id="@+id/step1_btn"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="505dp"
+        android:background="@drawable/btn_gray"
+        android:text="다음"
+        android:textColor="#979797"
+        android:textStyle="bold" />
+
 
 
 </RelativeLayout>
