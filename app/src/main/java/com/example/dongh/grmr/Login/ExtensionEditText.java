@@ -6,7 +6,6 @@ import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 
 /**
  * EditText 위에 키보드가 떠있는 경우 뒤로 가기 버튼을 감지하기 위한 EditText 확장 클래스

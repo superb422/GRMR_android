@@ -1,41 +1,61 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:calendar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Matching_register.Travel_Schedule"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="510dp"
+        android:background="#ffffff"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/schedule_exit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="false"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="32dp"
-            android:visibility="visible"
-            app:srcCompat="@drawable/ic_exitbtn" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:background="@drawable/ic_schedule_bg"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/schedule_exit"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="35dp"
-            android:text="여행일정을\n등록해주세요."
-            android:textColor="#4a4a4a"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/schedule_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="false"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="32dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ic_backbtn" />
+
+            <TextView
+                android:id="@+id/schedule_region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/schedule_exit"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="25dp"
+                android:text="일본, 도쿄"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="언제 떠날까요?"
+                android:textColor="#ffffff"
+                android:textSize="25dp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
@@ -43,13 +63,11 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="37dp">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="11dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:weightSum="7">
@@ -65,8 +83,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:text="일"
-                            android:textColor="#414141"
-                            android:textSize="15dp"
+                            android:textColor="#9b9b9b"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
                     </RelativeLayout>
 
@@ -81,8 +99,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:text="월"
-                            android:textColor="#414141"
-                            android:textSize="15dp"
+                            android:textColor="#9b9b9b"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
                     </RelativeLayout>
 
@@ -97,8 +115,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:text="화"
-                            android:textColor="#414141"
-                            android:textSize="15dp"
+                            android:textColor="#9b9b9b"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
                     </RelativeLayout>
 
@@ -113,8 +131,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:text="수"
-                            android:textColor="#414141"
-                            android:textSize="15dp"
+                            android:textColor="#9b9b9b"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
                     </RelativeLayout>
 
@@ -129,8 +147,24 @@
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:text="목"
-                            android:textColor="#414141"
-                            android:textSize="15dp"
+                            android:textColor="#9b9b9b"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="금"
+                            android:textColor="#9b9b9b"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
                     </RelativeLayout>
 
@@ -145,24 +179,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:text="토"
-                            android:textColor="#414141"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:text="일"
-                            android:textColor="#414141"
-                            android:textSize="15dp"
+                            android:textColor="#9b9b9b"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
                     </RelativeLayout>
 
@@ -173,32 +191,35 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <com.example.dongh.grmr.Travel.CalendarCore.DayPickerView
+        <com.example.dongh.grmr.Matching_register.CalendarCore.DayPickerView
             android:id="@+id/pickerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="331dp"
+            android:layout_marginTop="25dp"
+            android:background="#fcfcfc"
             calendar:drawRoundRect="true" />
     </LinearLayout>
 
 
-    <RelativeLayout
+    <Button
         android:id="@+id/rl_done_btn"
-        android:layout_width="290dp"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#517ae4">
+        android:layout_marginTop="555dp"
+        android:background="@drawable/btn_gray"
+        android:text="등록완료"
+        android:textColor="#979797"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/duration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="저장"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
-    </RelativeLayout>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="61dp"
+        android:background="#f5f5f5" />
 
 
 </RelativeLayout>
